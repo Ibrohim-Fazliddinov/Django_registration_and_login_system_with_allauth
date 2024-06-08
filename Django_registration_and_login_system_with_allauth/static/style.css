@@ -1,0 +1,30 @@
+.search-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ced4da;
+    border-radius: 50px;
+    padding: 5px 15px;
+    max-width: 400px; /* Adjusted to accommodate the login link */
+    margin: auto;
+}
+
+.search-container input {
+    border: none;
+    outline: none;
+    flex: 1;
+}
+
+.search-container button {
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.search-container .search-icon {
+    color: #6c757d;
+}
+
+#signin_up {
+    margin-left: 10px; /* Optional: add some spacing between button and login link */
+    white-space: nowrap; /* Prevents text wrapping */
+}

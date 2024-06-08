@@ -15,7 +15,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
@@ -26,7 +25,6 @@ SECRET_KEY = 'django-insecure-nfx-1pchpi^gk(v!-ok9*g9ri(qe6w%gz&5zb0j*h$y#$putsa
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -70,7 +68,8 @@ ROOT_URLCONF = 'Django_registration_and_login_system_with_allauth.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
+        'DIRS': [BASE_DIR / 'Django_registration_and_login_system_with_allauth/templates', 'users/templates',
+                 'templates']
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -79,6 +78,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # extensions:
+                'django.template.context_processors.request',
             ],
         },
     },
@@ -94,7 +95,6 @@ AUTHENTICATION_BACKENDS = [
 
 WSGI_APPLICATION = 'Django_registration_and_login_system_with_allauth.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
@@ -104,7 +104,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -124,7 +123,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
@@ -136,17 +134,16 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [BASE_DIR / 'Django_registration_and_login_system_with_allauth/static']
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
@@ -154,9 +151,34 @@ SOCIALACCOUNT_PROVIDERS = {
         # (``socialaccount`` app) containing the required client
         # credentials, or list them here:
         'APP': {
-            'client_id': '123',
-            'secret': '456',
-            'key': ''
+            'client_id': '1016998513874-onlo6a9k0k4ketp2t19ob18dpf3l810h.apps.googleusercontent.com',
+            'secret': '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',
+        }
+    },
+    'github': {
+        'App': {
+            'client_id': 'Ov23lidVq6mZNzlgtDUQ',
+            'secret': '74c27ed53990dbe5f9d9c56930a6b4e3ab91e39b',
+        }
+    },
+    'spotify': {
+        'App': {
+            'client_id': 'e0311e566db3425db5fc1a428a6ef316',
+            'secret': 'e800753b9dd64a2f88a6853af40c7f1e',
+        }
+    },
+    'discord': {
+        'APP': {
+            'client_id': '1245734438667812875',
+            'secret': 'd02e4c87ff1afd285ba84b7596fbf493ca482ea4bf7ac8e10b04344df4c66199'
         }
     }
 }
+SITE_ID = 1
+LOGIN_REDIRECT_URL = '/'
+ACCOUNT_LOGOUT_REDIRECT_URL = '/'
+
+
+
+
+
