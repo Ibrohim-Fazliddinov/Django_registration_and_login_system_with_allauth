@@ -68,7 +68,7 @@ ROOT_URLCONF = 'Django_registration_and_login_system_with_allauth.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'Django_registration_and_login_system_with_allauth/templates', 'users/templates',
+        'DIRS': [BASE_DIR / 'users/templates',
                  'templates']
         ,
         'APP_DIRS': True,
@@ -137,8 +137,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [BASE_DIR / 'Django_registration_and_login_system_with_allauth/static']
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / 'static']
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

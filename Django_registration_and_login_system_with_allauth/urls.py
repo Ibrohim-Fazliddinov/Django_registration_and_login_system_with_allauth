@@ -4,7 +4,7 @@ from django.urls import path, include
 
 
 def home(request):
-    return render(request, 'base.html')
+    return render(request, 'users/base.html')
 
 
 urlpatterns = [
