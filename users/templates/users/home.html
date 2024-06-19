@@ -7,7 +7,10 @@
             <p class="card-text">
                <b></b>
             </p>
-            <a href="{% url 'logout' %}" class="btn btn-primary">LogOut</a>
+            <form method="post" action="{% url 'logout' %}" style="display: inline">
+                  {% csrf_token %}
+                  <a href="{% url 'logout' %}" style="text-decoration: none"><button type="submit" class="btn btn-primary">Logout</button></a>
+            </form>
           </div>
           <div class="card-footer text-muted">2 days ago</div>
         </div>

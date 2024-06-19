@@ -1,7 +1,24 @@
 .title-decor {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh; /* Ensures the div takes up the full viewport height */
-            text-align: center; /* Ensures text is centered */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensures the div takes up the full viewport height */
+  text-align: center; /* Ensures text is centered */
+}
+
+.card {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.card-title {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+.form-group {
+  margin-bottom: 20px;
 }

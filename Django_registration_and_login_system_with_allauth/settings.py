@@ -146,36 +146,6 @@ MEDIA_ROOT = BASE_DIR / 'Django_registration_and_login_system_with_allauth/media
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# SOCIALACCOUNT_PROVIDERS = {
-#     'google': {
-#         # For each OAuth based provider, either add a ``SocialApp``
-#         # (``socialaccount`` app) containing the required client
-#         # credentials, or list them here:
-#         'APP': {
-#             'client_id': '1016998513874-onlo6a9k0k4ketp2t19ob18dpf3l810h.apps.googleusercontent.com',
-#             'secret': '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',
-#         }
-#     },
-#     # 'github': {
-#     #     'App': {
-#     #         'client_id': 'Ov23lidVq6mZNzlgtDUQ',
-#     #         'secret': '74c27ed53990dbe5f9d9c56930a6b4e3ab91e39b',
-#     #     }
-#     # },
-#     # 'spotify': {
-#     #     'App': {
-#     #         'client_id': 'e0311e566db3425db5fc1a428a6ef316',
-#     #         'secret': 'e800753b9dd64a2f88a6853af40c7f1e',
-#     #     }
-#     # },
-#     # 'discord': {
-#     #     'APP': {
-#     #         'client_id': '1245734438667812875',
-#     #         'secret': 'd02e4c87ff1afd285ba84b7596fbf493ca482ea4bf7ac8e10b04344df4c66199'
-#     #     }
-#     # }
-# }
-
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
         'SCOPE': [
@@ -201,7 +171,7 @@ SOCIALACCOUNT_PROVIDERS = {
 
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
-ACCOUNT_LOGOUT_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 SESSION_COOKIE_AGE = 100 * 365 * 24 * 60 * 60  # 100 years
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

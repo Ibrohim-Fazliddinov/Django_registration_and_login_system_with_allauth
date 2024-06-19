@@ -1,6 +1,35 @@
-{% extends 'users/base.html' %} REGISTER {% block content %}
-<form method="post">
-  {% csrf_token %} {{ form.as_p }}
-  <button type="submit">Submit</button>
-</form>
+{% extends 'users/base.html' %} REGISTER {% load socialaccount %}
+{% block content %}
+<div class="card">
+  <h2 class="card-title">Вход в систему</h2>
+  <form method="post">
+    <div class="form-group">
+        {% csrf_token %}
+        {{ form.as_p }}
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+  </form>
+  <hr>
+  <p class="text-center">
+    <a href="#">Забыли пароль?</a>
+  </p>
+  <p class="text-center">или</p>
+  <div class="text-center">
+        <a href="{% provider_login_url 'github' %}" class="btn btn">
+      <i class="fa fa-github fa-fw"></i>
+      <span>Login with GitHub</span>
+    </a>
+      <br>
+    <a href="{% provider_login_url 'google' %}" class="btn btn">
+      <i class="fa fa-google fa-fw"></i>
+      <span>Login with Google</span>
+    </a>
+    <a href="{% provider_login_url 'spotify' %}" class="btn btn">
+      <i class="fa fa-spotify fa-fw"></i>
+      <span>Login with Spotify</span>
+    </a>
+  </div>
+  <hr>
+  <p class="text-center">Don’t have an account? <a href="{% url 'register' %}" style="text-decoration: none">Sign up</a></p>
+</div>
 {% endblock %}

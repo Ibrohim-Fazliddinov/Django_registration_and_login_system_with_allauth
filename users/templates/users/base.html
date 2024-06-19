@@ -11,10 +11,13 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
-       <link
+    <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+            rel="stylesheet">
     <!-- CSS from static -->
     <link rel="stylesheet" href="{% static 'style.css' %}" />
     <title>{{ title }}</title>
@@ -60,7 +63,10 @@
           aria-selected="false"
         >
           {% if user.is_authenticated %}
-          <a href="{% url 'logout' %}" style="text-decoration: none">Logout</a>
+              <form method="post" action="{% url 'logout' %}" style="display: inline">
+                  {% csrf_token %}
+                  <a href="{% url 'logout' %}" style="text-decoration: none"><button type="submit" style="background: none;padding: 10px;border: none; font: inherit; color: inherit;">Logout</button></a>
+              </form>
           {% else %}
           <a href="{% url 'login' %}" style="text-decoration: none"
             >SignUp/SignIn</a

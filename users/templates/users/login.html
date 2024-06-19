@@ -1,9 +1,39 @@
 {% extends 'users/base.html' %} {% load socialaccount %} {% block content %}
-<form method="post">
-  <h1>SignIn</h1>
-  {% csrf_token %} {{ form.as_p }}
-  <button type="submit" class="btn btn-primary">
-    <i class="bi bi-person-plus"></i> Зарегистрироваться
-  </button>
-</form>
+<div class="card">
+  <h2 class="card-title">LogIn</h2>
+  <form method="post">
+    <div class="form-group">
+        <input type="hidden" name="mext" value="{{ next }}">
+        {% csrf_token %}
+        {{ form.as_p }}
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+  </form>
+  <hr>
+  <p class="text-center">
+    <a href="#">Forgot password?</a>
+  </p>
+  <p class="text-center">or</p>
+  <div class="text-center">
+        <a href="{% provider_login_url 'github' %}" class="btn btn-dark">
+      <i class="fa fa-github fa-fw"></i>
+      <span>Login with GitHub</span>
+    </a>
+      <br>
+    <a href="{% provider_login_url 'google' %}" class="btn btn-light" style="margin: 10px">
+      <i class="fa fa-google fa-fw"></i>
+      <span>Login with Google</span>
+    </a>
+    <a href="{% provider_login_url 'spotify' %}" class="btn btn-success">
+      <i class="fa fa-spotify fa-fw"></i>
+      <span>Login with Spotify</span>
+    </a>
+{#      <a href="{% provider_login_url 'spotify' %}" class="btn btn-">#}
+{#      <i class="fa fa-instagram fa-fw"></i>#}
+{#      <span>Login with Discord</span>#}
+{#    </a>#}
+  </div>
+  <hr>
+  <p class="text-center">Don’t have an account? <a href="{% url 'register' %}" style="text-decoration: none">Sign up</a></p>
+</div>
 {% endblock %}

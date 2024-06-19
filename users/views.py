@@ -1,5 +1,4 @@
-from django.contrib.auth import login
-
+from allauth.account.views import LogoutView
 from users.forms import RegistrationForm, LoginForm
 from django.shortcuts import render, redirect
 from django.contrib import messages
@@ -75,5 +74,3 @@ class ProfileView(ListView):
         return Profile.objects.all()
 
 
-def logout(request):
-    return render(request, 'users/logout.html')
