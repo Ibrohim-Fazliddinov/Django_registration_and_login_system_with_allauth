@@ -1,0 +1,26 @@
+{% extends 'users/base.html' %}
+{% load socialaccount %}
+{% block content %}
+{%if user.is_authenticated %}
+<div class="card mb-3" style="max-width: 540px">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img
+        src="{{ profiles.user_photo.url }}"
+        class="img-fluid rounded-start"
+        alt="{{ profiles.url }}"
+      />
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{ user.username }}</h5>
+        <p class="card-text">{{ profiles.bio }}</p>
+        <p class="card-text">
+          <small class="text-muted">{{ user.date_joined }}</small>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+{% endblock %}

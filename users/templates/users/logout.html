@@ -1,0 +1,5 @@
+{% extends 'users/base.html' %} {% block content %}
+<h1>Logout</h1>
+
+<form>{% csrf_token %} {{ form.as_p }}</form>
+{% endblock %}

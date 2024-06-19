@@ -1,0 +1,9 @@
+{% extends 'users/base.html' %} {% load socialaccount %} {% block content %}
+<form method="post">
+  <h1>SignIn</h1>
+  {% csrf_token %} {{ form.as_p }}
+  <button type="submit" class="btn btn-primary">
+    <i class="bi bi-person-plus"></i> Зарегистрироваться
+  </button>
+</form>
+{% endblock %}

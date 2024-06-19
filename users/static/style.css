@@ -1,0 +1,7 @@
+.title-decor {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Ensures the div takes up the full viewport height */
+            text-align: center; /* Ensures text is centered */
+}
