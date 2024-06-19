@@ -63,10 +63,7 @@
           aria-selected="false"
         >
           {% if user.is_authenticated %}
-              <form method="post" action="{% url 'logout' %}" style="display: inline">
-                  {% csrf_token %}
-                  <a href="{% url 'logout' %}" style="text-decoration: none"><button type="submit" style="background: none;padding: 10px;border: none; font: inherit; color: inherit;">Logout</button></a>
-              </form>
+                  <a href="{% url 'logout' %}" style="text-decoration: none">Logout</a>
           {% else %}
           <a href="{% url 'login' %}" style="text-decoration: none"
             >SignUp/SignIn</a

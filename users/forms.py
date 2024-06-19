@@ -67,5 +67,5 @@ class LoginForm(AuthenticationForm):
                                      }))
 
     class Meta:
-        model = User
+        model = get_user_model()
         fields = ('username', 'password', 'remember_me')

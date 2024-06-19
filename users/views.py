@@ -74,3 +74,6 @@ class ProfileView(ListView):
         return Profile.objects.all()
 
 
+class CustomLogoutView(LogoutView):
+    next_page = 'home'
+    template_name = 'users/logout.html'  # путь к вашему шаблону

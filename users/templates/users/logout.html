@@ -1,0 +1,19 @@
+{% extends 'users/base.html'%}
+
+{% block content %}
+    <div class="card">
+    <div class="card-body">
+        <h1 class="card-title">Logout</h1>
+        <p class="card-text">
+            You'll log out, are you sure?
+        </p>
+        <form method="post" action="{% url 'logout' %}" style="display: inline">
+            {% csrf_token %}
+            <a href="{% url 'logout' %}" style="text-decoration: none"><button type="submit" class="btn btn-outline-danger">Logout</button></a>
+            |
+            <a href="{% url 'home' %}" class="btn btn-outline-primary">Back</a>
+        </form>
+    </div>
+    </div>
+
+{% endblock %}

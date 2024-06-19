@@ -1,35 +1,31 @@
 {% extends 'users/base.html' %} REGISTER {% load socialaccount %}
 {% block content %}
 <div class="card">
-  <h2 class="card-title">Вход в систему</h2>
+  <h2 class="card-title">Create your account</h2>
   <form method="post">
     <div class="form-group">
         {% csrf_token %}
         {{ form.as_p }}
     </div>
-    <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+    <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
   </form>
   <hr>
-  <p class="text-center">
-    <a href="#">Забыли пароль?</a>
-  </p>
-  <p class="text-center">или</p>
   <div class="text-center">
-        <a href="{% provider_login_url 'github' %}" class="btn btn">
+        <a href="{% provider_login_url 'github' %}" class="btn btn-dark">
       <i class="fa fa-github fa-fw"></i>
       <span>Login with GitHub</span>
     </a>
       <br>
-    <a href="{% provider_login_url 'google' %}" class="btn btn">
+    <a href="{% provider_login_url 'google' %}" class="btn btn-light" style="margin: 10px">
       <i class="fa fa-google fa-fw"></i>
       <span>Login with Google</span>
     </a>
-    <a href="{% provider_login_url 'spotify' %}" class="btn btn">
+    <a href="{% provider_login_url 'spotify' %}" class="btn btn-success">
       <i class="fa fa-spotify fa-fw"></i>
       <span>Login with Spotify</span>
     </a>
   </div>
   <hr>
-  <p class="text-center">Don’t have an account? <a href="{% url 'register' %}" style="text-decoration: none">Sign up</a></p>
+  <p class="text-center">Already have an account? <a href="{% url 'login' %}" style="text-decoration: none">Sign In</a></p>
 </div>
 {% endblock %}
