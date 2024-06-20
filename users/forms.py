@@ -69,3 +69,35 @@ class LoginForm(AuthenticationForm):
     class Meta:
         model = get_user_model()
         fields = ('username', 'password', 'remember_me')
+
+
+class UserUpdateForm(forms.ModelForm):
+    username = forms.CharField(required=True, max_length=100,
+                               widget=forms.TextInput(attrs={
+                                   'class': 'form-control',
+                                   'placeholder': 'First Name',
+                               }))
+    email = forms.EmailField(required=True, max_length=100,
+                             widget=forms.TextInput(attrs={
+                                 'class': 'form-control',
+                                 'placeholder': 'Email',
+                             }))
+
+    class Meta:
+        model = get_user_model()
+        fields = ('username', 'email')
+
+
+class UpdateProfileForm(forms.ModelForm):
+    bio = forms.CharField(widget=forms.Textarea(
+        attrs={'class': 'form-control',
+               'placeholder': 'Bio', }
+    ))
+    user_photo = forms.ImageField(required=False, widget=forms.FileInput(attrs={
+        'class': 'form-control',
+        'placeholder': 'Image',
+    }))
+
+    class Meta:
+        model = Profile
+        fields = ('bio', 'user_photo')

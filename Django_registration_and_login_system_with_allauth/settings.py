@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'crispy_forms',
+    'crispy_bootstrap5',
     # allauth providers:
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.spotify',
@@ -184,3 +186,4 @@ EMAIL_USE_TLS = True
 
 # ACCOUNT_EMAIL_REQUIRED = True
 # ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+CRISPY_TEMPLATE_PACK = 'bootstrap5'

@@ -1,0 +1,137 @@
+{% extends 'users/base.html' %} {% load crispy_forms_filters %}
+{% block content %}
+<style>
+  .custom-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+    box-shadow: none;
+    outline: none;
+    resize: none;
+    font-size: 16px;
+    color: inherit;
+  }
+
+  .custom-textarea:focus {
+    border-color: #80bdff;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px rgba(0, 13, 255, 0.25);
+  }
+
+  .file-input-wrapper {
+    position: relative;
+    overflow: hidden;
+    margin-top: 10px;
+  }
+
+  .file-input-wrapper input[type="file"] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
+
+  .file-input-wrapper .custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .file-input-wrapper .custom-file-upload:hover {
+    background-color: #0056b3;
+  }
+
+  .file-input-wrapper .file-name {
+    margin-left: 10px;
+    color: #555;
+  }
+</style>
+<div class="container mt-5">
+  <div class="card shadow-lg">
+    <h2 class="card-title mb-0">Update Profile</h2>
+    <hr />
+    <div class="card-body">
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="text-center mb-4">
+          <img
+            src="{{ user.profile.user_photo.url }}"
+            alt="User Photo"
+            class="rounded-circle"
+            style="width: 150px; height: 150px; object-fit: cover"
+          />
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="id_user_photo">Profile Photo</label>
+          <div class="file-input-wrapper">
+            <input type="file" id="id_user_photo" name="user_photo" />
+            <label class="custom-file-upload" for="id_user_photo"
+              >Choose file</label
+            >
+            <span class="file-name">No file chosen</span>
+          </div>
+        </div>
+
+        <hr />
+        <div class="form-group">
+          <label for="id_username">Username</label>
+          <input
+            type="text"
+            name="username"
+            id="id_username"
+            class="form-control"
+            value="{{ user_form.username.value }}"
+          />
+        </div>
+        <div class="form-group">
+          <label for="id_email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="id_email"
+            class="form-control"
+            value="{{ user_form.email.value }}"
+          />
+        </div>
+        <div class="form-group">
+          <label for="id_bio" class="font-weight">About You</label>
+          <textarea
+            name="bio"
+            id="id_bio"
+            class="custom-textarea"
+            rows="5"
+            placeholder="Tell us about yourself..."
+          >
+                {{ profile_form.bio.value }}
+              </textarea
+          >
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Update</button>
+      </form>
+    </div>
+  </div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      const inputField = document.getElementById("id_user_photo");
+      const fileLabel = inputField.nextElementSibling;
+
+      inputField.addEventListener("change", function () {
+          let fileName = "";
+          if (this.files.length > 0) {
+        fileName = this.files[0].name;
+      }
+      fileLabel.innerText = fileName || "No file chosen";
+    });
+  });
+</script>
+{% endblock %}

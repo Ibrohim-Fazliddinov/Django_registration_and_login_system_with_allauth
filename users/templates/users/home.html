@@ -1,28 +1,38 @@
-{% extends 'users/base.html' %} {% block content %}
-    {% if user.is_authenticated %}
-        <div class="card text-center">
-          <div class="card-header">Welcome</div>
-          <div class="card-body">
-            <h5 class="card-title">Hi <a href="{% url 'profile' %}" style="text-decoration: none;">{{ user.username }}</a></h5>
-            <p class="card-text">
-               Hiiiiiiii this is my project <b>Django-register-login-system-with-allauth</b>
-            </p>
-            <a href="{% url 'logout' %}" class="btn btn-primary">LogOut</a>
-          </div>
-          <div class="card-footer text-muted">2 days ago</div>
-        </div>
+{% extends 'users/base.html' %} {% block content %} {% if user.is_authenticated %}
+<div class="card text-center">
+  <div class="card-header">Greeting</div>
+  <div class="card-body">
+    <h5 class="card-title">
+      Welcome
+      <a href="{% url 'profile' %}" style="text-decoration: none"
+        >{{ user.username }}</a
+      >
+    </h5>
+    <p class="card-text">
+      This is a <b>user login and registration system</b> built with Django5.
+      Open source, free and easily maintained Authentication and Authorization
+      template with 3rd party authentication using the most popular social login
+      library djnago-allauth
+    </p>
+    <a href="{% url 'logout' %}" class="btn btn-primary">LogOut</a>
+  </div>
+  <div class="card-footer text-muted">{{ user.date_joined }}</div>
+</div>
 
 {% else %}
-        <div class="card text-center">
-          <div class="card-header">Welcome</div>
-          <div class="card-body">
-            <h5 class="card-title">Welcome guest</h5>
-            <p class="card-text">
-               Hiiiiiiii this is my project <b>Django-register-login-system-with-allauth</b> you will
-            </p>
-            <a href="{% url 'login' %}" class="btn btn-primary">Login</a>
-          </div>
-          <div class="card-footer text-muted">2 days ago</div>
-        </div>
+<div class="card text-center">
+  <div class="card-header">Greeting</div>
+  <div class="card-body">
+    <h5 class="card-title">Welcome guest</h5>
+    <p class="card-text">
+      This is a <b>user login and registration system</b> built with Django5.
+      Open source, free and easily maintained Authentication and Authorization
+      template with 3rd party authentication using the most popular social login
+      library djnago-allauth
+    </p>
+    <a href="{% url 'login' %}" class="btn btn-primary">Login</a>
+  </div>
+  <div class="card-footer text-muted">{{ user.date_joined }}</div>
+</div>
 
 {% endif %} {% endblock %}
