@@ -1,4 +1,6 @@
-{% extends 'users/base.html' %} {% load crispy_forms_filters %}
+{% extends 'users/base.html' %}
+{% load django_bootstrap5 %}
+
 {% block content %}
 <style>
   .custom-textarea {
@@ -73,34 +75,13 @@
           <label for="id_user_photo">Profile Photo</label>
           <div class="file-input-wrapper">
             <input type="file" id="id_user_photo" name="user_photo" />
-            <label class="custom-file-upload" for="id_user_photo"
-              >Choose file</label
-            >
+            <label class="custom-file-upload" for="id_user_photo">Choose file</label>
             <span class="file-name">No file chosen</span>
           </div>
         </div>
 
         <hr />
-        <div class="form-group">
-          <label for="id_username">Username</label>
-          <input
-            type="text"
-            name="username"
-            id="id_username"
-            class="form-control"
-            value="{{ user_form.username.value }}"
-          />
-        </div>
-        <div class="form-group">
-          <label for="id_email">Email</label>
-          <input
-            type="email"
-            name="email"
-            id="id_email"
-            class="form-control"
-            value="{{ user_form.email.value }}"
-          />
-        </div>
+        {% bootstrap_form user_form %}
         <div class="form-group">
           <label for="id_bio" class="font-weight">About You</label>
           <textarea
@@ -109,14 +90,12 @@
             class="custom-textarea"
             rows="5"
             placeholder="Tell us about yourself..."
-          >
-                {{ profile_form.bio.value }}
-              </textarea
-          >
+          >{{ profile_form.bio.value }}</textarea>
         </div>
 
         <button type="submit" class="btn btn-primary btn-block">Update</button>
       </form>
+      <small><a href="{% url 'change_password' %}">Change password?</a></small>
     </div>
   </div>
 </div>
@@ -124,13 +103,14 @@
   document.addEventListener("DOMContentLoaded", function () {
       const inputField = document.getElementById("id_user_photo");
       const fileLabel = inputField.nextElementSibling;
+      const fileNameSpan = fileLabel.nextElementSibling;
 
       inputField.addEventListener("change", function () {
           let fileName = "";
           if (this.files.length > 0) {
         fileName = this.files[0].name;
       }
-      fileLabel.innerText = fileName || "No file chosen";
+      fileNameSpan.innerText = fileName || "No file chosen";
     });
   });
 </script>

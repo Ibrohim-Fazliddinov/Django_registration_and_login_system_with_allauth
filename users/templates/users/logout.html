@@ -7,9 +7,9 @@
         <p class="card-text">
             You'll log out, are you sure?
         </p>
-        <form method="post" action="{% url 'logout' %}" style="display: inline">
+        <form method="post" action="{% url 'logout' %}">
             {% csrf_token %}
-            <a href="{% url 'logout' %}" style="text-decoration: none"><button type="submit" class="btn btn-outline-danger">Logout</button></a>
+            <button type="submit" class="btn btn-outline-danger">Logout</button>
             |
             <a href="{% url 'home' %}" class="btn btn-outline-primary">Back</a>
         </form>

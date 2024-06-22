@@ -1,10 +1,14 @@
 asgiref==3.8.1
+beautifulsoup4==4.12.3
 certifi==2024.6.2
 cffi==1.16.0
 charset-normalizer==3.3.2
+crispy-bootstrap5==2024.2
 cryptography==42.0.8
 Django==5.0.6
 django-allauth==0.63.3
+django-bootstrap5==24.2
+django-crispy-forms==2.2
 idna==3.7
 oauthlib==3.2.2
 pillow==10.3.0
@@ -12,6 +16,7 @@ pycparser==2.22
 PyJWT==2.8.0
 requests==2.32.3
 requests-oauthlib==2.0.0
+soupsieve==2.5
 sqlparse==0.5.0
 typing_extensions==4.12.1
 tzdata==2024.1

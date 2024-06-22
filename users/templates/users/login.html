@@ -11,7 +11,7 @@
   </form>
   <hr>
   <p class="text-center">
-    <a href="#">Forgot password?</a>
+    <a href="{% url 'reset_password' %}">Forgot password?</a>
   </p>
   <p class="text-center">or</p>
   <div class="text-center">
@@ -28,10 +28,6 @@
       <i class="fa fa-spotify fa-fw"></i>
       <span>Login with Spotify</span>
     </a>
-{#      <a href="{% provider_login_url 'spotify' %}" class="btn btn-">#}
-{#      <i class="fa fa-instagram fa-fw"></i>#}
-{#      <span>Login with Discord</span>#}
-{#    </a>#}
   </div>
   <hr>
   <p class="text-center">Don’t have an account? <a href="{% url 'register' %}" style="text-decoration: none">Sign up</a></p>

@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 
+from crispy_bootstrap5 import bootstrap5
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -41,12 +44,11 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'crispy_forms',
-    'crispy_bootstrap5',
+    'django_bootstrap5',
+    
     # allauth providers:
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.spotify',
-    'allauth.socialaccount.providers.discord',
     'allauth.socialaccount.providers.github',
 
     # Your apps:
@@ -172,18 +174,18 @@ SOCIALACCOUNT_PROVIDERS = {
 }
 
 SITE_ID = 1
+
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
 SESSION_COOKIE_AGE = 100 * 365 * 24 * 60 * 60  # 100 years
 
+# SMTP config
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-# EMAIL_HOST_USER = 'itmoney600@gmail.com'
-# EMAIL_HOST_PASSWORD = 'your_app_password'
-# DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+EMAIL_HOST_USER = 'your_email@gmail.com'
+EMAIL_HOST_PASSWORD = 'your_password'
 
-# ACCOUNT_EMAIL_REQUIRED = True
-# ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
