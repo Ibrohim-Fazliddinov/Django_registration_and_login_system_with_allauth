@@ -30,13 +30,13 @@ EN-version
 - Django 5
 - Bootstrap 5
 
+<img width="1030" alt="Overview" src="https://github.com/Ibrohim-Fazliddinov/Django_registration_and_login_system_with_allauth/assets/127670519/8482e1fb-57b5-4a8d-a8ae-a90d8a235520">
 
 ## Useful Links or Sources of Inspiration:
 
 - [Reset Password](https://www.youtube.com/watch?v=sFPcd6myZrY&list=PL-51WBLyFTg2vW-_6XBoUpE7vpmoR3ztO&index=21)
 - [Login and register with Django](https://github.com/earthcomfy/Django-registration-and-login-system)
 
-![Снимок экрана 2024-06-22 в 19.11.53.png](..%2F..%2FDesktop%2F%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202024-06-22%20%D0%B2%2019.11.53.png)
 
 RU-version
 
@@ -71,12 +71,14 @@ RU-version
 - Django5
 - Bootstrap5
 
-![Снимок экрана 2024-06-22 в 19.11.53.png](..%2F..%2FDesktop%2F%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202024-06-22%20%D0%B2%2019.11.53.png)
+<img width="1030" alt="Overview" src="https://github.com/Ibrohim-Fazliddinov/Django_registration_and_login_system_with_allauth/assets/127670519/beeeaae7-e35d-46fc-957b-d0bab11c6dd5">
+
 
 ## Полезные ссылки или где я брал вдохновение:
 
 - [Reset Password](https://www.youtube.com/watch?v=sFPcd6myZrY&list=PL-51WBLyFTg2vW-_6XBoUpE7vpmoR3ztO&index=21)
 - [Login and register with django](https://github.com/earthcomfy/Django-registration-and-login-system)
+
 
 ## Tutorial
 
