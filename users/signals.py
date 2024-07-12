@@ -5,13 +5,10 @@ from .models import Profile
 
 
 @receiver(post_save, sender=User)
-def create_or_update_user_profile(sender, instance, created, **kwargs):
-    """
-    Сигнал для создания или обновления профиля пользователя при сохранении объекта User.
-    """
+def create_user_profile(sender, instance, created, **kwargs):
     if created:
-        # Создаем профиль, если пользователь был создан
         Profile.objects.create(user=instance)
-    else:
-        # Сохраняем профиль, если пользователь был обновлен
-        instance.profile.save()
+
+@receiver(post_save, sender=User)
+def save_user_profile(sender, instance, **kwargs):
+    instance.profile.save()
